@@ -22,7 +22,6 @@ requirements:
   run:
     - python >=3.8
     - toml >=0.10.2
-    - mkdocstrings >=0.18
 
 test:
   imports:
