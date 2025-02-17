@@ -1,5 +1,5 @@
 {% set name = "drawpyo" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/drawpyo-{{ version }}.tar.gz
-  sha256: cc2f147d4c10832600019cb276b2445c3dd32a96fbabf2951dbf7155a1f7a956
+  sha256: a5e1ea04adde679a05457147930b85b5aa949634c40ac41e09f74d216b422b81
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
