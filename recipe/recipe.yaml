@@ -1,0 +1,44 @@
+schema_version: 1
+
+context:
+  name: drawpyo
+  version: 0.2.3
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/drawpyo-${{ version }}.tar.gz
+  sha256: 2eb9dcc257c7f38bb160bc01aace558c12c575570fb3542b4676933c2db31309
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - flit-core >=3.2,<4
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - toml >=0.10.2
+
+tests:
+  - python:
+      imports:
+        - drawpyo
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: A Python library for programmatically generating draw.io charts.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/MerrimanInd/drawpyo
+
+extra:
+  recipe-maintainers:
+    - thewchan
