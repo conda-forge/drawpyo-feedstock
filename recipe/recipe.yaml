@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: drawpyo
-  version: "0.2.4"
+  version: "0.2.5"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/drawpyo-${{ version }}.tar.gz
-  sha256: 8df95e41b8ded264552dfb66319753d4a2c8e7f498b536e7c5db4188fa1a764b
+  sha256: 28087c5b7975335f88aa5ee289b29b10d634acc1415ae7816bd3629a193f6a8e
 
 build:
   number: 0
