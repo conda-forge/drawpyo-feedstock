@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: drawpyo
-  version: "0.2.5"
+  version: "0.2.6"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/drawpyo-${{ version }}.tar.gz
-  sha256: 28087c5b7975335f88aa5ee289b29b10d634acc1415ae7816bd3629a193f6a8e
+  sha256: a5a835cef1876d85e03f0e9a8b6be9c9130cd0c6a5b851f14d93050b14bfb269
 
 build:
   number: 0
@@ -31,7 +31,9 @@ tests:
       imports:
         - drawpyo
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: A Python library for programmatically generating draw.io charts.
